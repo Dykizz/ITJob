@@ -31,6 +31,16 @@
             font-size: medium;
         }
     }
+    &__DetailJob{
+        &-title{
+            font-weight: 700;
+        }
+        &-item{
+            margin-bottom: 10px;
+            font-size: medium;
+            font-weight: 400;
+        }
+    }
 
     //End Main
     &__footer{

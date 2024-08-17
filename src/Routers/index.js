@@ -4,6 +4,7 @@ import Home from '../Page/Home'
 import Login from '../Page/Login'
 import Register from '../Page/Register'
 import Search from '../Page/Search'
+import JobDetail from '../Page/JobDetail'
 export const routers = [
     {
         path: '/',
@@ -24,6 +25,10 @@ export const routers = [
             {
                 path : 'search',
                 element : <Search/>
+            },
+            {
+                path : 'job/:id',
+                element : <JobDetail/>
             }
 
         ]

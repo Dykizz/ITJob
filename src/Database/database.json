@@ -10,7 +10,7 @@
         },
         {
             "key" : 3,
-            "value" : "TP  Hồ Chí Minh"
+            "value" : "TP Hồ Chí Minh"
         }
     ],
     
@@ -52,7 +52,7 @@
         {
             "id" : "h9o1",
             "idCompany" : "h89s",
-            "nameCompany" : "Công ty Thiên Phát",
+            "companyName" : "Công ty Thiên Phát",
             "name" : "Fullstack developer" ,
             "tags" : ["Java" , "SQL" , "ReactJS"] ,
             "salary" : 2000,
@@ -65,7 +65,7 @@
         {
             "id" : "d3o9",
             "idCompany" : "k27s",
-            "nameCompany" : "Công ty High Tech",
+            "companyName" : "Công ty High Tech",
             "name" : "Intern Java" ,
             "tags" : ["Java" , "SQL"] ,
             "salary" : 400,
@@ -78,7 +78,7 @@
         {
             "id" : "d3o9",
             "idCompany" : "k27s",
-            "nameCompany" : "Công ty High Tech",
+            "companyName" : "Công ty High Tech",
             "name" : "Intern Java" ,
             "tags" : ["Java" , "SQL"] ,
             "salary" : 400,
@@ -91,7 +91,7 @@
         {
             "id" : "d3o9",
             "idCompany" : "k27s",
-            "nameCompany" : "Công ty High Tech",
+            "companyName" : "Công ty High Tech",
             "name" : "Intern Java" ,
             "tags" : ["Java" , "SQL"] ,
             "salary" : 400,
