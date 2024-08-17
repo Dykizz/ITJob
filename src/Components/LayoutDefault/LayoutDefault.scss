@@ -1,0 +1,46 @@
+*{
+    box-sizing: border-box;
+}
+.layout-default{
+    &__header{
+        background: orange;
+        padding: 20px 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &-logo{
+            font-size: 34px;
+            font-weight: 800;
+        }
+        &-buttons{
+            width: 200px;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    //Main
+    &__main{
+        .container{
+            padding: 0 100px;
+        }
+        min-height: 82vh;
+    }
+    &__search{
+        &-itemCard{
+            margin-bottom: 5px;
+            font-size: medium;
+        }
+    }
+
+    //End Main
+    &__footer{
+        background: orange;
+        
+        margin-top: 10px;
+        padding: 10px 50px;
+        text-align: center;
+        font-weight: 600;
+        
+    }
+    
+}
