@@ -1,32 +1,71 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
 import { getJobById } from '../../Services/jobService';
-import { Button, Card, Form, Tag, Row, Col, Input} from 'antd';
+import { Button, Card, Form, Tag, Row, Col, Input, Select , notification} from 'antd';
 import { getCompanyById } from '../../Services/companyService';
+import { getListCity } from '../../Services/cityService'
+import { submitCV } from '../../Services/cvService';
 const {TextArea} = Input;
 
 function JobDetail() {
     const { id } = useParams();
     const [item, setItem] = useState({});
+    const [city, setCity] = useState([]);
+    const [api, contextHolder] = notification.useNotification();
     const navigate = useNavigate();
     const [form] = Form.useForm();
-    const rules = [{ required: true, message: "Bắt buộc điền thông tin này" }]
+    const rules = [{ required: true, message: "Bắt buộc điền thông tin này" }];
+    const successNotification = (message) => {
+        api.open({
+          message: 'Nộp CV thành công!',
+          type: 'success',
+          description:
+            message,
+          duration: 2,
+        });
+    };
+    const errorNotification = (message) => {
+        api.open({
+          message: 'Nộp CV không thành công!',
+          type: 'error',
+          description:
+            message,
+          duration: 2,
+        });
+    };
     useEffect(() => {
         const fetchData = async () => {
-            const result = await getJobById(id);
-            if (result) {
-                const company = await getCompanyById(result.idCompany);
-                setItem({ inforCompany: company, ...result });
+            const inforJob = await getJobById(id);
+            if (inforJob) {
+                const company = await getCompanyById(inforJob.idCompany);
+                setItem({ inforCompany: company, ...inforJob });
             }
+            const listCity = await getListCity();
+            if (listCity) setCity(listCity);
         }
         fetchData();
     }, []);
-    const onFinish = (record) =>{
-        console.log(record);
-        form.resetFields();
+    const onFinish = async (record) =>{
+        const time = new Date();
+        const cv = {
+            ...record,
+            idCompany : item.idCompany,
+            idJob : id ,
+            statusRead : false,
+            createAt : time.toLocaleString()
+        }
+        const respone = await submitCV(cv);
+        if (respone){
+            successNotification("Hãy chờ nhà tuyển dụng duyệt CV và nhận phản hồi nhé!")
+            form.resetFields();
+        }else{
+            errorNotification("Quá trình nộp CV bị lỗi. Xin hãy kiểm tra và nộp lại!")
+        }
+        
     }
     return (<>
-        <Button style={{ marginTop: 10 }} type='primary' onClick={() => { navigate(-1) }}>Trở lại</Button>
+        {contextHolder}
+        <Button className='goback' type='primary' onClick={() => { navigate(-1) }}>Trở lại</Button>
         {item &&
             <div className='layout-default__DetailJob'>
                 <h1 className='layout-default__DetailJob-title' >{item.name}</h1>
@@ -82,7 +121,7 @@ function JobDetail() {
                     </Col>
                     <Col span={6}>
                         <Form.Item label='Thành phố' name='city' rules={rules}>
-                            <Input />
+                            <Select options={city} />
                         </Form.Item>
                     </Col>
                     <Col span={24} >

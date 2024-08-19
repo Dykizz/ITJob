@@ -8,13 +8,13 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import {AllReducers} from './Reducers/index'
 const root = ReactDOM.createRoot(document.getElementById('root'));
-// const store = createStore(AllReducers);
+const store = createStore(AllReducers);
 root.render(
-  // <Provider store={store}>
+  <Provider store={store}>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  // </Provider>
+ </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

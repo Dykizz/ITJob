@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { getCompanys } from "../../Services/companyService";
-import { Button, Card, Col, Row } from "antd";
+import { Card, Col, Row , Button} from "antd";
 import { useNavigate, Link } from "react-router-dom";
 
-function CompanyList() {
+function Company() {
     const [companys, setCompanys] = useState([]);
     const navigate = useNavigate();
     useEffect(() => {
         const fetchData = async () => {
-            const result = await getCompanys(4);
+            const result = await getCompanys();
             if (result) setCompanys(result);
         }
         fetchData();
@@ -16,8 +16,9 @@ function CompanyList() {
 
     return (
         <>
-            <h2>Danh sách một số công ty</h2>
-            <Row gutter={20} style={{ marginTop: 10, marginBottom: 10 }}>
+            <Button className="goback" type="primary" onClick={() => {navigate(-1)}} style={{marginTop: 10}}>Trở lại</Button>
+            <h2>Danh sách các công ty</h2>
+            <Row gutter={[20, 20]} style={{ marginTop: 10, marginBottom: 10 }}>
                 {
                     companys.map((company) => {
                         return (
@@ -36,8 +37,7 @@ function CompanyList() {
                     })
                 }
             </Row>
-            <Button onClick={() => { navigate('/company') }}>Xem thêm ...</Button>
         </>
     )
 }
-export default CompanyList;
+export default Company;

@@ -28,7 +28,7 @@ function Search() {
     }, [])
     return (
         <div className='layout-default__search'>
-            <Button style={{marginTop : 10}} type='primary' onClick={()=>{navigate(-1)}}>Trở lại</Button>
+            <Button className='goback' type='primary' onClick={()=>{navigate(-1)}}>Trở lại</Button>
             <h3 className='layout-default__search-title'>Kết quả tìm kiếm :
                 {citySearch && <Tag style={{marginLeft : 5}}> {citySearch}</Tag>}
                 {keywordSearch && <Tag style={{marginLeft : 5}}>{keywordSearch}</Tag>}

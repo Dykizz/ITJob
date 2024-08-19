@@ -1,27 +1,96 @@
 *{
     box-sizing: border-box;
 }
+.mb-10{
+    margin-bottom: 10px;
+}
+.border{
+    border: 2px solid #ddd;
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+.goback{
+    position: fixed;
+    top : 110px;
+    left: 5px;
+}
+.sider{
+    overflow: auto;
+    height: 100vh;
+    position: fixed !important;
+    left: 0;
+    top: 90px;
+    border-right: 1px solid #ddd;
+}
+.content{
+    overflow: auto;
+    margin-top: 110px;
+
+}
+.layoutContent{
+    margin-left: 200px;
+    background: white;
+    transition: all 0.2s;
+    &-collapse{
+        margin-left: 80px;
+    }
+}
 .layout-default{
     &__header{
+        position: fixed;
+        height: 90px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 999;
         background: orange;
-        padding: 20px 50px;
+        padding: 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
         &-logo{
-            font-size: 34px;
-            font-weight: 800;
-        }
-        &-buttons{
             width: 200px;
+            height: 100%;
+            transition: all 0.2s;
+            cursor: pointer;
+            .img-logo{
+                border-right: 1px solid #ddd;
+                border-bottom: 1px solid #FFA500;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                
+            }
+        }
+        &-logoCollapse{
+            width: 80px;
+        }
+        &-nav{
             display: flex;
+            padding: 0 20px;
             justify-content: space-between;
+            .header__nav-left svg{
+                width: 30px;
+                height: 30px;
+            }
+            .header__nav-right{
+                width: 200px;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        &-navMenu{
+            flex: 1;
         }
     }
     //Main
     &__main{
+        // position: relative;
+        // margin-top: 110px;
+        // background-color: white;
+        // width: 100%;
         .container{
-            padding: 0 100px;
+            padding: 0 80px;
         }
         min-height: 82vh;
     }
@@ -41,11 +110,16 @@
             font-weight: 400;
         }
     }
+    &__login , &__register{
+        width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+    }
 
     //End Main
     &__footer{
         background: orange;
-        
         margin-top: 10px;
         padding: 10px 50px;
         text-align: center;

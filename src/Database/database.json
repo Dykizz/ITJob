@@ -1,135 +1,172 @@
 {
-    "city": [
-        {
-            "key" : 1,
-            "value" : "Hà Nội"
-        },
-        {
-            "key" : 2,
-            "value" : "Đà Nẵng"
-        },
-        {
-            "key" : 3,
-            "value" : "TP Hồ Chí Minh"
-        }
-    ],
+  "city": [
+    {
+      "key": 1,
+      "value": "Hà Nội",
+      "id": "fb75"
+    },
+    {
+      "key": 2,
+      "value": "Đà Nẵng",
+      "id": "fab3"
+    },
+    {
+      "key": 3,
+      "value": "TP Hồ Chí Minh",
+      "id": "85b1"
+    }
+  ],
+  "tags": [
+    {
+      "key": 1,
+      "value": "SQL",
+      "id": "c48f"
+    },
+    {
+      "key": 2,
+      "value": "Java",
+      "id": "6acb"
+    },
+    {
+      "key": 3,
+      "value": "C++",
+      "id": "437f"
+    },
+    {
+      "key": 4,
+      "value": "Python",
+      "id": "8c1b"
+    },
+    {
+      "key": 5,
+      "value": "Javascript",
+      "id": "e111"
+    },
+    {
+      "key": 6,
+      "value": "Ruby",
+      "id": "9678"
+    },
+    {
+      "key": 7,
+      "value": "React",
+      "id": "ef5f"
+    },
+    {
+      "key": 8,
+      "value": "Typescript",
+      "id": "03b0"
+    }
+  ],
+  "jobs": [
+    {
+      "id": "h9o1",
+      "idCompany": "h89s",
+      "companyName": "Công ty Thiên Phát",
+      "name": "Fullstack developer",
+      "tags": [
+        "Java",
+        "SQL",
+        "ReactJS"
+      ],
+      "salary": 2000,
+      "description": "Cần 2 năm kinh nghiệm",
+      "status": true,
+      "city": [
+        "Hà Nội"
+      ],
+      "createAt": "15:30:12 17-08-2024",
+      "updateAt": "15:30:12 17-08-2024"
+    },
+    {
+      "id": "d3o9",
+      "idCompany": "k27s",
+      "companyName": "Công ty High Tech",
+      "name": "Intern Java",
+      "tags": [
+        "Java",
+        "SQL"
+      ],
+      "salary": 400,
+      "description": "Sinh viên năm 3 trở lên",
+      "status": true,
+      "city": [
+        "TP Hồ Chí Minh"
+      ],
+      "createAt": "16:30:12 17-08-2024",
+      "updateAt": "16:30:12 17-08-2024"
+    }
     
-    "tags": [
-        {
-            "key" : 1,
-            "value" : "SQL"
-        },
-        {
-            "key" : 2,
-            "value" : "Java"
-        },
-        {
-            "key" : 3,
-            "value" : "C++"
-        },
-        {
-            "key" : 4 ,
-            "value" : "Python"
-        },
-        {
-            "key" : 5,
-            "value" : "Javascript"
-        },
-        {
-            "key" : 6,
-            "value" : "Ruby"
-        },
-        {
-            "key" : 7,
-            "value" : "React"
-        },
-        {
-            "key" : 8,
-            "value" : "Typescript"
-        }
-    ],
-    "jobs": [
-        {
-            "id" : "h9o1",
-            "idCompany" : "h89s",
-            "companyName" : "Công ty Thiên Phát",
-            "name" : "Fullstack developer" ,
-            "tags" : ["Java" , "SQL" , "ReactJS"] ,
-            "salary" : 2000,
-            "description" : "Cần 2 năm kinh nghiệm",
-            "status" : true,
-            "city" : ["Hà Nội"],
-            "createAt" : "15:30:12 17-08-2024" ,
-            "updateAt" : "15:30:12 17-08-2024"
-        },
-        {
-            "id" : "d3o9",
-            "idCompany" : "k27s",
-            "companyName" : "Công ty High Tech",
-            "name" : "Intern Java" ,
-            "tags" : ["Java" , "SQL"] ,
-            "salary" : 400,
-            "description" : "Sinh viên năm 3 trở lên",
-            "status" : true,
-            "city" : ["TP Hồ Chí Minh"],
-            "createAt" : "16:30:12 17-08-2024" ,
-            "updateAt" : "16:30:12 17-08-2024"
-        },
-        {
-            "id" : "d3o9",
-            "idCompany" : "k27s",
-            "companyName" : "Công ty High Tech",
-            "name" : "Intern Java" ,
-            "tags" : ["Java" , "SQL"] ,
-            "salary" : 400,
-            "description" : "Sinh viên năm 3 trở lên",
-            "status" : true,
-            "city" : ["TP Hồ Chí Minh"],
-            "createAt" : "16:30:12 17-08-2024" ,
-            "updateAt" : "16:30:12 17-08-2024"
-        },
-        {
-            "id" : "d3o9",
-            "idCompany" : "k27s",
-            "companyName" : "Công ty High Tech",
-            "name" : "Intern Java" ,
-            "tags" : ["Java" , "SQL"] ,
-            "salary" : 400,
-            "description" : "Sinh viên năm 3 trở lên",
-            "status" : true,
-            "city" : ["TP Hồ Chí Minh"],
-            "createAt" : "16:30:12 17-08-2024" ,
-            "updateAt" : "16:30:12 17-08-2024"
-        }
-    ],
-    "company": [
-        {
-            "id" :"h89s",
-            "companyName" : "Công ty Thiên Phát",
-            "phone" : "0978265112",
-            "email" : "thienphat@gmail.com",
-            "password" : "ctythienphat",
-            "token" : "kL4hkA8na8OjsHskj9ha0ja2",
-            "address" : " Số 7, Trần Quốc Tuấn ",
-            "workingTime": "8h-17h",
-            "website" : "website",
-            "quantityPeople" : 80,
-            "description" : "Đoàn Kết - Thân Thiện - Phát Triển",
-            "detail" : "...lorem"
-        },
-        {
-            "id" :"k27s",
-            "companyName" : "Công ty High Tech",
-            "phone" : "0336170037",
-            "email" : "hightech@gmail.com",
-            "password" : "ctyhightech",
-            "token" : "Pskj9kDuhqG72ksh2msb0ja5",
-            "address" : " Số 1, Trần Thái Hoàng ",
-            "workingTime": "8h-17h",
-            "website" : "website",
-            "quantityPeople" : 100,
-            "description" : "Kỹ Năng - Kỷ luật - Đoàn Kết",
-            "detail" : "...lorem"           
-        }
-    ]
+  ],
+  "company": [
+    {
+      "id": "h89s",
+      "companyName": "Công ty Thiên Phát",
+      "phone": "0978265112",
+      "email": "thienphat@gmail.com",
+      "password": "ctythienphat",
+      "token": "kL4hkA8na8OjsHskj9ha0ja2",
+      "address": " Số 7, Trần Quốc Tuấn ",
+      "workingTime": "8h-17h",
+      "website": "website",
+      "quantityPeople": 80,
+      "description": "Đoàn Kết - Thân Thiện - Phát Triển",
+      "detail": "...lorem"
+    },
+    {
+      "id": "k27s",
+      "companyName": "Công ty High Tech",
+      "phone": "0336170037",
+      "email": "hightech@gmail.com",
+      "password": "ctyhightech",
+      "token": "Pskj9kDuhqG72ksh2msb0ja5",
+      "address": " Số 1, Trần Thái Hoàng ",
+      "workingTime": "8h-17h",
+      "website": "website",
+      "quantityPeople": 100,
+      "description": "Kỹ Năng - Kỷ luật - Đoàn Kết",
+      "detail": "...lorem"
+    }
+  ],
+  "cv": [
+    {
+      "id": "62ac",
+      "name": "Phùng Phú Tài",
+      "phone": "0237903698",
+      "email": "phutai@gmail.com",
+      "city": "TP Hồ Chí Minh",
+      "description": "Sinh viên năm 2",
+      "linkProject": "hso.github.com",
+      "idCompany": "h89s",
+      "idJob": "h9o1",
+      "statusRead": false,
+      "createAt": "21:31:02 18/8/2024"
+    },
+    {
+      "id": "4570",
+      "name": "Nguyễn Văn Nhân",
+      "phone": "0729692078",
+      "email": "nguyennhan@gmail.com",
+      "city": "Hà Nội",
+      "description": "Sinh viên năm cuối có 1 năm kinh nghiệm về Java",
+      "linkProject": "projectService.github.com",
+      "idCompany": "h89s",
+      "idJob": "h9o1",
+      "statusRead": false,
+      "createAt": "21:44:33 18/8/2024"
+    },
+    {
+      "id": "0dbc",
+      "name": "Đoàn Thị Ý",
+      "phone": "0892679602",
+      "email": "ysoshy@gmail.com",
+      "city": "Đà Nẵng",
+      "description": " Sinh viên năm 3",
+      "linkProject": "shop.github.com",
+      "idCompany": "h89s",
+      "idJob": "h9o1",
+      "statusRead": false,
+      "createAt": "21:46:05 18/8/2024"
+    }
+  ]
 }

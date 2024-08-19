@@ -5,7 +5,7 @@ function Main(){
         <>
             <div className="layout-default__main">
                 <div className="container">
-                    <Outlet/>
+                    <Outlet />
                 </div>
             </div>
         </>

@@ -1,7 +1,7 @@
 import { useRoutes } from 'react-router-dom'
-import { routers } from '../../Routers';
+import { Routers } from '../../Routers';
 function All(){
-    const elements = useRoutes(routers)
+    const elements = useRoutes(Routers())
     return (
         <>
             {elements}
