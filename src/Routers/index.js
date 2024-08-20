@@ -11,6 +11,7 @@ import { getCookie } from '../helpers/cookie'
 import DashBoard from '../Page/DashBoard'
 import { useSelector } from 'react-redux'
 import InforCompany from '../Page/InforCompany'
+import JobManage from '../Page/JobManage'
 export const Routers =()=>{
     const token = getCookie("token") || '';
     const statusLogin = useSelector(state => state.companyReducer);
@@ -55,6 +56,14 @@ export const Routers =()=>{
                 {
                     path : 'infor-company',
                     element : <InforCompany/>
+                },
+                {
+                    path : 'job-manage',
+                    element : <JobManage/>
+                },
+                {
+                    path : 'job/:id',
+                    element : <JobDetail/>
                 }
             ]
         }

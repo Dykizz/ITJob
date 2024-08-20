@@ -15,7 +15,7 @@ const menu = [
     },
     {
         key: '3',
-        label: 'Quản lý việc làm',
+        label: <Link to ='/job-manage'>Quản lý việc làm</Link>,
         icon: <UnorderedListOutlined />
     },{
         key: '4',

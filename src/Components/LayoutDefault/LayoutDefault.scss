@@ -13,6 +13,9 @@
     position: fixed;
     top : 110px;
     left: 5px;
+    &-admin{
+        left : 205px;
+    }
 }
 .sider{
     overflow: auto;

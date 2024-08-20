@@ -1,4 +1,4 @@
-import { get } from "../utils/request"
+import { get, patch } from "../utils/request"
 
 export const getCompanyById = async (id) =>{
     const result = await get(`company/${id}`);
@@ -16,4 +16,8 @@ export const loginCompany = async (email,password)=>{
        return result[0];
     }
     return null;
+}
+export const editCompany = async (company,id) =>{
+    const result = await patch("company",id,company);
+    return result;
 }

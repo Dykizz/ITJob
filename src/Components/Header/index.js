@@ -20,10 +20,11 @@ function Header(props) {
         dispatch(logout());
         navigate('/')
     }
+    const goHome = token ? '/admin' : '/';
     return (
         <header className='layout-default__header'>
             <div className={"layout-default__header-logo" + (collapse ? ' layout-default__header-logoCollapse' : '')}
-                onClick={() => { navigate('/') }}
+                onClick={() =>{navigate(goHome)}}
             >
                 <img className='img-logo' src={collapse ? logoFold : logo} alt='logo' />
 
@@ -36,7 +37,7 @@ function Header(props) {
                 }
                 <div className="header__nav-right">
                     
-                        {token ? <Button type='primary'>Trang chủ</Button> : <Button onClick={methodRegister} type='primary'> Đăng kí </Button>}
+                        {token ? <Button type='primary' onClick={()=>{navigate(goHome)}}>Trang chủ</Button> : <Button onClick={methodRegister} type='primary'> Đăng kí </Button>}
                         {token ? <Button danger onClick={methodLogout}>Đăng xuất</Button> : <Button onClick={methodLogin} > Đăng nhập </Button>}
 
                 </div>

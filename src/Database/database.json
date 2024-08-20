@@ -67,10 +67,10 @@
       "tags": [
         "Java",
         "SQL",
-        "ReactJS"
+        "React"
       ],
       "salary": 2000,
-      "description": "Cần 2 năm kinh nghiệm",
+      "description": "Cần 2 năm kinh nghiệm wfs",
       "status": true,
       "city": [
         "Hà Nội"
@@ -96,12 +96,11 @@
       "createAt": "16:30:12 17-08-2024",
       "updateAt": "16:30:12 17-08-2024"
     }
-    
   ],
   "company": [
     {
       "id": "h89s",
-      "companyName": "Công ty Thiên Phát",
+      "companyName": "Công ty Thiên Tôn",
       "phone": "0978265112",
       "email": "thienphat@gmail.com",
       "password": "ctythienphat",
