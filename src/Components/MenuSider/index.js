@@ -1,5 +1,5 @@
 import { Menu } from "antd";
-import { DashboardOutlined,UsergroupDeleteOutlined , SnippetsOutlined , FileOutlined,LockOutlined, PlusOutlined, UnorderedListOutlined, StockOutlined } from '@ant-design/icons'
+import { DashboardOutlined,UsergroupDeleteOutlined , SnippetsOutlined , UnorderedListOutlined, StockOutlined } from '@ant-design/icons'
 import { Link } from "react-router-dom";
 
 const menu = [
@@ -10,7 +10,7 @@ const menu = [
     },
     {
         key: '2',
-        label: 'Thông tin công ty',
+        label: <Link to ='/infor-company'>Thông tin công ty</Link>,
         icon: <UsergroupDeleteOutlined />
     },
     {

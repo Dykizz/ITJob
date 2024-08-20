@@ -3,11 +3,10 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Tag , Button } from 'antd';
 import { getAllJob } from '../../Services/jobService';
 import SearchList from './SearchList';
-import { getCompanyById } from '../../Services/companyService';
 
 function Search() {
     const [searchParams, setSearchParams] = useSearchParams();
-    const citySearch = searchParams.get("city") || "";
+    const citySearch = searchParams.get("city") === "Tất cả" ? '' : (searchParams.get("city") || '');
     const keywordSearch = searchParams.get("keyword") || "";
     const [data, setData] = useState([]);
     const navigate = useNavigate();

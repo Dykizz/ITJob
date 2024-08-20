@@ -10,6 +10,7 @@ import CompanyDetail from '../Page/CompanyDetail'
 import { getCookie } from '../helpers/cookie'
 import DashBoard from '../Page/DashBoard'
 import { useSelector } from 'react-redux'
+import InforCompany from '../Page/InforCompany'
 export const Routers =()=>{
     const token = getCookie("token") || '';
     const statusLogin = useSelector(state => state.companyReducer);
@@ -50,6 +51,10 @@ export const Routers =()=>{
                 {
                     path : 'admin',
                     element : <DashBoard/>
+                },
+                {
+                    path : 'infor-company',
+                    element : <InforCompany/>
                 }
             ]
         }
