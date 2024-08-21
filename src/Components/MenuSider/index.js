@@ -19,7 +19,7 @@ const menu = [
         icon: <UnorderedListOutlined />
     },{
         key: '4',
-        label: 'Quản lý CV',
+        label: <Link to = 'cv-manage'>Quản lý CV</Link>,
         icon: <SnippetsOutlined />
     }
       

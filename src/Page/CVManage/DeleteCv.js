@@ -1,12 +1,11 @@
-import { Button, notification } from "antd";
+import { Button , notification} from "antd";
 import { DeleteOutlined } from '@ant-design/icons'
-import { deleteJob } from "../../Services/jobService";
-function DeleteJob({ id , onReload }) {
+import { deleteCv } from "../../Services/cvService";
+function DeleteCv({id,onReload}){
     const [api, contextHolder] = notification.useNotification();
     const handleDelete = async () => {
-        const respone = await deleteJob(id);
+        const respone = await deleteCv(id);
         if (respone) {
-            
             api.open({
                 message: 'Hệ thống đã nhận xử lý xóa',
                 type:  'info',
@@ -25,15 +24,9 @@ function DeleteJob({ id , onReload }) {
         }
 
     }
-    return (
-        <>
-            {contextHolder}
-            <Button
-                icon={<DeleteOutlined style={{ color: 'red' }} />} 
-                onClick={handleDelete}
-            />
-        </>
-
-    )
+    return <>
+        {contextHolder}
+        <Button icon = {<DeleteOutlined style={{color: 'red'}}/>} onClick={handleDelete}/>
+    </>
 }
-export default DeleteJob;
+export default DeleteCv;

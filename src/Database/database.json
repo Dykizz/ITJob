@@ -56,6 +56,11 @@
       "key": 8,
       "value": "Typescript",
       "id": "03b0"
+    },
+    {
+      "key": 9,
+      "value": "PHP",
+      "id": "2h9a"
     }
   ],
   "jobs": [
@@ -131,6 +136,41 @@
       "companyName": "Công ty Thiên Tôn",
       "createAt": "16:46:50 21/8/2024",
       "status": true
+    },
+    {
+      "id": "3ddc",
+      "name": " Assistant Tech Lead",
+      "tags": [
+        "Ruby",
+        "Typescript",
+        "SQL"
+      ],
+      "salary": 2000,
+      "city": [
+        "Đà Nẵng",
+        "TP Hồ Chí Minh"
+      ],
+      "description": "Yêu cầu có kinh nghiệm trên 3 năm về các ngôn ngữ được yêu cầu\nTrình độ tiếng anh thông thạo",
+      "status": true,
+      "idCompany": "f6be",
+      "companyName": "Công ty Hand Jai",
+      "createAt": "21:33:49 21/8/2024"
+    },
+    {
+      "id": "3e70",
+      "name": " Engineer (PHP)",
+      "tags": [
+        "PHP"
+      ],
+      "salary": 1200,
+      "city": [
+        "Hà Nội"
+      ],
+      "description": "Business-level English skills.\n3+ years of experience in PHP engineering\nWorking experience in database table design.\nExperience in agile development within a team environment using Git.\nAbility to work at the office.",
+      "status": true,
+      "idCompany": "f6be",
+      "companyName": "Công ty Hand Jai",
+      "createAt": "21:37:47 21/8/2024"
     }
   ],
   "company": [
@@ -161,6 +201,19 @@
       "quantityPeople": 100,
       "description": "Kỹ Năng - Kỷ luật - Đoàn Kết",
       "detail": "...lorem"
+    },
+    {
+      "id": "f6be",
+      "companyName": "Công ty Hand Jai",
+      "email": "hanjai@gmail.com",
+      "phone": "09868569013",
+      "password": "hanjaicty",
+      "token": "hyXS3nkobbcZrrROCNJ4rbkn",
+      "address": "Số 8, Đinh Tiên Hoàng",
+      "quantityPeople": 120,
+      "workingTime": "T2-T6",
+      "description": "Kỹ Năng - Chuyên Nghiệp - Tận Tình",
+      "detail": "Công ty số 1 khu vực Đinh Tiên Hoàng , có vốn đầu tư nước ngoài"
     }
   ],
   "cv": [
@@ -202,6 +255,19 @@
       "idJob": "h9o1",
       "statusRead": false,
       "createAt": "21:46:05 18/8/2024"
+    },
+    {
+      "id": "bb1e",
+      "name": "Phùng Phú Tài",
+      "phone": "0826709268",
+      "email": "phutai@gmail.com",
+      "city": "Đà Nẵng",
+      "description": "Có kinh nghiệm làm leader 5 năm",
+      "linkProject": "projectRuby.github.com",
+      "idCompany": "f6be",
+      "idJob": "3ddc",
+      "statusRead": true,
+      "createAt": "22:21:08 21/8/2024"
     }
   ]
 }

@@ -27,7 +27,7 @@ function CVstatistic(){
         fetchData();
     },[]);
     return (
-        data && <Card title = "Job" size='small'>
+        data && <Card title = "CV" size='small'>
             <div>Số lượng CV : <strong>{data.total}</strong></div>
             <div>Job đã đọc : <strong>{data.statusTrue}</strong></div>
             <div>Job chưa đọc : <strong>{data.statusFalse}</strong></div>

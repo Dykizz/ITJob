@@ -1,4 +1,4 @@
-import { Row, Form, Input, Col, Button, Card } from 'antd'
+import { Row, Form, Input, Col, Button, Card, notification } from 'antd'
 import { login } from '../../Actions/company';
 import { loginCompany } from '../../Services/companyService'
 import { setCookie } from '../../helpers/cookie';
@@ -9,17 +9,23 @@ function Login() {
     const [form] = Form.useForm();
     const dispatch = useDispatch();
     const navigate =useNavigate();
+    const [api,contextHoler] = notification.useNotification();
     const handleLogin = async (account) => {
         const result = await loginCompany(account.email,account.password);
         if (result){
-            setCookie("companyName",result.companyName);
-            setCookie("email",result.email);
-            setCookie("token",result.token);
-            setCookie("id",result.id);
+            setCookie("companyName",result.companyName,0.1);
+            setCookie("email",result.email,0.1);
+            setCookie("token",result.token,0.1);
+            setCookie("id",result.id,0.1);
             dispatch(login());
             navigate('/admin')
         }else{
-            console.log("Login không thành công!");
+            api.open({
+                message : "Đăng nhập không thành công",
+                type : 'error',
+                description : "Email hoặc mật khẩu không chính xác!",
+                duration : 2
+            })
         }
     }
     return (

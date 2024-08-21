@@ -1,4 +1,4 @@
-import { post, get } from "../utils/request"
+import { post, get,del } from "../utils/request"
 
 export const submitCV = async (cv)=>{
     const result = await post("cv",cv);
@@ -6,5 +6,13 @@ export const submitCV = async (cv)=>{
 }
 export const getCVbyCompanyId = async(id)=>{
     const result = await get("cv?idCompany="+ id );
+    return result;
+}
+export const getCVbyId = async (id) =>{
+    const result = await get("cv/"+  id);
+    return result;
+}
+export const deleteCv = async (id)=>{
+    const result = await del("cv",id);
     return result;
 }

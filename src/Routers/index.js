@@ -1,4 +1,3 @@
-import { Children } from 'react'
 import LayoutDefault from '../Components/LayoutDefault'
 import Home from '../Page/Home'
 import Login from '../Page/Login'
@@ -12,7 +11,8 @@ import DashBoard from '../Page/DashBoard'
 import { useSelector } from 'react-redux'
 import InforCompany from '../Page/InforCompany'
 import JobManage from '../Page/JobManage'
-import CreateJob from '../Page/JobManage/CreateJob'
+import CVManage from '../Page/CVManage'
+import InforCv from '../Page/CVManage/InforCv'
 export const Routers =()=>{
     const token = getCookie("token") || '';
     const statusLogin = useSelector(state => state.companyReducer);
@@ -65,6 +65,14 @@ export const Routers =()=>{
                 {
                     path : 'job/:id',
                     element : <JobDetail/>
+                },
+                {
+                    path : 'cv-manage',
+                    element : <CVManage/>
+                },
+                {
+                    path: 'infor-cv/:id',
+                    element : <InforCv/>
                 }
                 
             ]

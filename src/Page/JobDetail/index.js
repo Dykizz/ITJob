@@ -86,9 +86,9 @@ function JobDetail() {
                     <div className='layout-default__DetailJob-item'>Mức lương : <strong>{item.salary} $</strong> </div>
 
 
-                    <div className='layout-default__DetailJob-item'>Công ty : <strong>{item.companyName}</strong>  </div>
-                    <div className='layout-default__DetailJob-item'>Địa chỉ công ty : <strong>{item.inforCompany && item.inforCompany.address}</strong></div>
-                    <div className='layout-default__DetailJob-item'>Mô tả ngắn về công ty : <strong>{item.inforCompany && item.inforCompany.description}</strong></div>
+                    <div className='layout-default__DetailJob-item'>Công ty : <strong>{item?.inforCompany?.companyName}</strong>  </div>
+                    <div className='layout-default__DetailJob-item'>Địa chỉ công ty : <strong>{item?.inforCompany?.address}</strong></div>
+                    <div className='layout-default__DetailJob-item'>Mô tả ngắn về công ty : <strong>{item?.inforCompany?.description}</strong></div>
                     <div className='layout-default__DetailJob-item'>Mô tả chi tiết yêu cầu công việc :
                         <p>{item.description}</p>
                     </div>

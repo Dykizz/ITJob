@@ -15,6 +15,7 @@ function LayoutDefault(){
     return (
         <>{
             token ?
+            
             <Layout style={{minHeight: '100vh', backgroundColor: 'white'}}>
                 <Sider width={200} className='sider'  collapsed = {collapse} theme='light'>
                     <MenuSider/>
@@ -26,17 +27,15 @@ function LayoutDefault(){
                     </Content>
                     <Footer/>
                 </Layout>
-            </Layout> :
+                
+            </Layout>:
             <div>
                 <Header token = {token} collapse = {collapse} setCollapse = {setCollapse}/>
                 <div className='content'>
                     <Main />
                 </div>
-                
-                
-                
+                <Footer/>
             </div>
-            
         }
         </>
     

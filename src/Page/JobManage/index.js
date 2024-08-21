@@ -7,9 +7,9 @@ import { useNavigate } from 'react-router-dom';
 import EditJob from './EditJob';
 import { getListCity } from '../../Services/cityService';
 import { getTags } from '../../Services/tagsService';
-import DeleteJob from './DeleteJob';
 import { PlusOutlined } from '@ant-design/icons'
 import CreateJob from './CreateJob';
+import DeleteJob from './DeleteJob';
 function JobManage() {
     const id = getCookie("id");
     const [jobs, setJobs] = useState([]);
@@ -21,13 +21,13 @@ function JobManage() {
     const [listCity,setListCity] = useState([]);
     const [reload,setReload] = useState(false);
     const onReload =()=>{
-        console.log('reload');
         setReload(!reload);
     }
     useEffect(() => {
         const fetchJob = async () => {
             const respone = await getJobbyCompanyId(id);
             if (respone) setJobs(respone);
+            else setJobs([]);
             const listCity = await getListCity();
             const listTags = await getTags();
             if (listCity) setListCity(listCity);
