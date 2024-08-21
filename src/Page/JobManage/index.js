@@ -8,11 +8,14 @@ import EditJob from './EditJob';
 import { getListCity } from '../../Services/cityService';
 import { getTags } from '../../Services/tagsService';
 import DeleteJob from './DeleteJob';
+import { PlusOutlined } from '@ant-design/icons'
+import CreateJob from './CreateJob';
 function JobManage() {
     const id = getCookie("id");
     const [jobs, setJobs] = useState([]);
     const [editingJob, setEditingJob] = useState(null); 
     const [showEditModal, setShowEditModal] = useState(false);
+    const [showCreateModal, setShowCreateModal] = useState(false);
     const navigate = useNavigate();
     const [listTags,setListTags] = useState([]);
     const [listCity,setListCity] = useState([]);
@@ -36,7 +39,8 @@ function JobManage() {
         {
             title: 'Tên Job',
             dataIndex: 'name',
-            key: '1'
+            key: '1',
+            render: (_, {name})=>(<strong>{name}</strong>)
         },
         {
             title: 'Tags',
@@ -54,7 +58,7 @@ function JobManage() {
             title: 'Mức lương',
             dataIndex: 'salary',
             key: '3',
-            render: (_, { salary }) => (<p>{salary} $</p>)
+            render: (_, { salary }) => (<strong>{salary} $</strong>)
         },
         {
             title: 'Thời gian',
@@ -94,6 +98,7 @@ function JobManage() {
     return (
         <>
             <h2>Danh sách việc làm </h2>
+            <Button className='mb-10' icon ={<PlusOutlined />} onClick={()=>{setShowCreateModal(true)}}>Tạo việc làm mới</Button>
             <Table className='border' rowKey='id' dataSource={jobs} columns={colums} />
             {
                 editingJob && <EditJob 
@@ -104,6 +109,13 @@ function JobManage() {
                     onReload = {onReload}
                     onCancel = {()=>{setShowEditModal(false)}}/>
             }
+            <CreateJob 
+                listCity={listCity}
+                listTags={listTags}
+                visible={showCreateModal}
+                onReload={onReload}
+                onCancel={()=>{setShowCreateModal(false)}}
+            />
         </>
     );
 }

@@ -12,6 +12,7 @@ import DashBoard from '../Page/DashBoard'
 import { useSelector } from 'react-redux'
 import InforCompany from '../Page/InforCompany'
 import JobManage from '../Page/JobManage'
+import CreateJob from '../Page/JobManage/CreateJob'
 export const Routers =()=>{
     const token = getCookie("token") || '';
     const statusLogin = useSelector(state => state.companyReducer);
@@ -65,6 +66,7 @@ export const Routers =()=>{
                     path : 'job/:id',
                     element : <JobDetail/>
                 }
+                
             ]
         }
     ]

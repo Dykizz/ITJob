@@ -1,45 +1,44 @@
 import { Modal, Form, Col, Row, Input, Select, InputNumber, Switch, Button, notification } from "antd";
-import { useEffect } from "react";
-import { editJob } from "../../Services/jobService";
-
+import { createJob } from "../../Services/jobService";
+import { getCookie } from "../../helpers/cookie";
 const { TextArea } = Input;
-
-function EditJob({ job, visible, onCancel, listCity, listTags, onReload }) {
+function CreateJob({onCancel , visible, listCity ,listTags, onReload}){
     const [form] = Form.useForm();
     const [api, contextHolder] = notification.useNotification();
     const rules = [{ required: true, message: 'Thông tin này không được thiếu' }];
 
-    useEffect(() => {
-        form.setFieldsValue(job); // Đặt giá trị ban đầu cho form
-    }, [job, form]);
-
     const handleSubmit = async () => {
         try {
             // Lấy toàn bộ giá trị hiện tại của form, ngay cả khi không thay đổi
-            const jobEdit = form.getFieldsValue();
-
+            let jobNew = form.getFieldsValue();
             // Kiểm tra các giá trị của form theo rules
             await form.validateFields();
-
-            const response = await editJob(jobEdit, job.id);
+            const time = new Date();
+            jobNew = {
+                ...jobNew,
+                idCompany : getCookie("id"),
+                companyName : getCookie("companyName"),
+                createAt : time.toLocaleString()
+            }
+            const response = await createJob(jobNew);
             if (response) {
                 api.open({
-                    message: 'Chỉnh sửa thành công !',
+                    message: 'Tạo job thành công !',
                     type: 'success',
-                    description: 'Thông tin job đã được sửa!',
+                    description: 'Bạn đã tạo job mới thành công!',
                     duration: 2
                 });
                 onCancel();
                  // Đóng modal sau khi thành công
                 onReload();
             } else {
-                throw new Error('Chỉnh sửa không thành công!');
+                throw new Error('Tạo job không thành công!');
             }
         } catch (error) {
             api.open({
-                message: 'Chỉnh sửa không thành công!',
+                message: 'Tạo job không thành công!',
                 type: 'error',
-                description: 'Thông tin chỉnh sửa không thành công. Vui lòng kiểm tra lại!',
+                description: 'Lỗi tạo job không thành công. Vui lòng kiểm tra lại!',
                 duration: 2
             });
         }
@@ -48,14 +47,14 @@ function EditJob({ job, visible, onCancel, listCity, listTags, onReload }) {
     return (
         <Modal
             width={800}
-            title='Chỉnh sửa'
+            title='Tạo việc làm'
             open={visible}
-            onCancel={()=>{form.setFieldsValue(job); onCancel()} }
+            onCancel={()=>{form.resetFields(); onCancel()} }
             footer={null}
         >
             {contextHolder}
             <Form
-                name="formEditJob"
+                name="formCreateJob"
                 layout="vertical"
                 form={form}
                 onFinish={handleSubmit}
@@ -104,5 +103,4 @@ function EditJob({ job, visible, onCancel, listCity, listTags, onReload }) {
         </Modal>
     );
 }
-
-export default EditJob;
+export default CreateJob;

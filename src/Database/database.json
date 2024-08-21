@@ -70,7 +70,7 @@
         "React"
       ],
       "salary": 2000,
-      "description": "Cần 2 năm kinh nghiệm wfs",
+      "description": "Cần 2 năm kinh nghiệm ",
       "status": true,
       "city": [
         "Hà Nội"
@@ -95,6 +95,42 @@
       ],
       "createAt": "16:30:12 17-08-2024",
       "updateAt": "16:30:12 17-08-2024"
+    },
+    {
+      "id": "64e3",
+      "name": "Intern Java",
+      "tags": [
+        "Java",
+        "SQL"
+      ],
+      "salary": 700,
+      "city": [
+        "Hà Nội",
+        "Đà Nẵng"
+      ],
+      "description": " Có kiến thức về Java Core , hệ sinh thái của Spring",
+      "status": true,
+      "idCompany": "h89s",
+      "companyName": "Công ty Thiên Tôn",
+      "createAt": "16:41:25 21/8/2024"
+    },
+    {
+      "id": "26bd",
+      "name": "Chuyên Viên Phân Tích Dữ Liệu (Data Analyst)",
+      "tags": [
+        "SQL",
+        "Javascript",
+        "Python"
+      ],
+      "salary": 1200,
+      "city": [
+        "TP Hồ Chí Minh"
+      ],
+      "description": "Ứng viên dưới 30 tuổi, tốt nghiệp đại học chuyên ngành liên quan kinh tế, công nghệ thông tin hoặc hệ thống thông tin kinh tế...\nCó kinh nghiệm 1 năm triển khai các hệ thống CNTT",
+      "idCompany": "h89s",
+      "companyName": "Công ty Thiên Tôn",
+      "createAt": "16:46:50 21/8/2024",
+      "status": true
     }
   ],
   "company": [
